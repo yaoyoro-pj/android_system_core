@@ -299,6 +299,7 @@ static BatteryMonitor::PowerSupplyType readPowerSupplyType(const String8& path) 
     static SysfsStringEnumMap<int> supplyTypeMap[] = {
             {"Unknown", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_UNKNOWN},
             {"Battery", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_BATTERY},
+            {"BMS", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_BATTERY},
             {"UPS", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_AC},
             {"Mains", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_AC},
             {"USB", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_USB},
@@ -311,6 +312,7 @@ static BatteryMonitor::PowerSupplyType readPowerSupplyType(const String8& path) 
             {"USB_C", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_AC},
             {"USB_PD", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_AC},
             {"USB_PD_DRP", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_USB},
+            {"Wipower", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_WIRELESS},
             {"Wireless", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_WIRELESS},
             {"Dock", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_DOCK},
             {"DASH", BatteryMonitor::ANDROID_POWER_SUPPLY_TYPE_AC},
