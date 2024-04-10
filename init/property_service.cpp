@@ -1413,6 +1413,7 @@ static void SetSafetyNetProps() {
     InitPropertySet("ro.boot.verifiedbootstate", "green");
     InitPropertySet("ro.boot.veritymode", "enforcing");
     InitPropertySet("ro.boot.vbmeta.device_state", "locked");
+    InitPropertySet("ro.oem_unlock_supported", "0");
 }
 
 void PropertyInit() {
