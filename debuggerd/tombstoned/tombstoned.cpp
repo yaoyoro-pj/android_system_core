@@ -157,7 +157,7 @@ class CrashQueue {
       result.temporary_path = std::move(tmp_filename);
     }
 
-    return std::move(result);
+    return result;
   }
 
   std::optional<CrashOutput> get_output(DebuggerdDumpType dump_type) {
