@@ -79,9 +79,7 @@ bool ConstructVerityTable(const FsAvbHashtreeDescriptor& hashtree_desc,
     // Always use ignore_zero_blocks.
     target.IgnoreZeroBlocks();
 
-    if (hashtree_desc.flags & AVB_HASHTREE_DESCRIPTOR_FLAGS_CHECK_AT_MOST_ONCE) {
         target.CheckAtMostOnce();
-    }
 
     LINFO << "Built verity table: '" << target.GetParameterString() << "'";
 
