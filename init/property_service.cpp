@@ -1380,6 +1380,8 @@ static void ProcessBootconfig() {
 }
 
 static void SetSafetyNetProps() {
+    std::string error;
+
     // Check whether this is a normal boot, and whether the bootloader is actually locked
     auto isNormalBoot = true; // no prop = normal boot
     auto isAvbOrange = false; // no prop = not unlocked (relocked)
@@ -1409,11 +1411,11 @@ static void SetSafetyNetProps() {
     }
 
     // Spoof properties
-    InitPropertySet("ro.boot.flash.locked", "1");
-    InitPropertySet("ro.boot.verifiedbootstate", "green");
-    InitPropertySet("ro.boot.veritymode", "enforcing");
-    InitPropertySet("ro.boot.vbmeta.device_state", "locked");
-    InitPropertySet("ro.oem_unlock_supported", "0");
+    PropertySetNoSocket("ro.boot.flash.locked", "1", &error);
+    PropertySetNoSocket("ro.boot.verifiedbootstate", "green", &error);
+    PropertySetNoSocket("ro.boot.veritymode", "enforcing", &error);
+    PropertySetNoSocket("ro.boot.vbmeta.device_state", "locked", &error);
+    PropertySetNoSocket("ro.oem_unlock_supported", "0", &error);
 }
 
 void PropertyInit() {
