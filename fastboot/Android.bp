@@ -138,7 +138,10 @@ cc_defaults {
 
 cc_binary {
     name: "fastbootd",
-    defaults: ["fastboot_defaults"],
+    defaults: [
+        "fastboot_defaults",
+        "fastbootd_hacks",
+    ],
 
     recovery: true,
 
